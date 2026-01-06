@@ -12,6 +12,7 @@
 
 ## my links
 1. python: [https://smallzhpython.readthedocs.io/](https://smallzhpython.readthedocs.io/)
+2. c/c++: [https://smallzhc-cpp.readthedocs.io/](https://smallzhc-cpp.readthedocs.io/)
 
 ## other links
 1. docsify: [https://docsify.js.org](https://docsify.js.org/#/)
