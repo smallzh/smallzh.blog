@@ -1,0 +1,51 @@
+#readthedocs-ea-text-nostyle-nodoctool {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0;
+}
+
+
+#readthedocs-ea-text-nostyle-nodoctool.expanded {
+    width: 220px;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    padding: 12px 16px;
+}
+
+#readthedocs-ea-text-nostyle-nodoctool .icon {
+    font-size: 24px;
+    color: white;
+    user-select: none;
+}
+
+#readthedocs-ea-text-nostyle-nodoctool.expanded .icon {
+    display: none;
+}
+
+#readthedocs-ea-text-nostyle-nodoctool .ea-content {
+    display: none;
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 12px;
+    text-align: center;
+    white-space: normal;
+}
+
+#readthedocs-ea-text-nostyle-nodoctool.expanded .ea-content {
+    display: block;
+}

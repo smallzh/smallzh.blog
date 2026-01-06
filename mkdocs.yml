@@ -1,0 +1,36 @@
+site_name: smallzh
+site_url: https://smallzh.top/
+
+nav:
+  - Home: index.md
+  - HelloWorld: concept/hello_world.md
+  - 基础概念:
+      - 编码: concept/encoding.md
+      - 进制: concept/radix.md
+      - 随机数: concept/random.md
+      - 时区: concept/geo_timezone.md
+      - 正则表达式: concept/regex.md
+  - 操作系统:
+      - Linux系统: system/linux.md
+      - Linux常用命令: system/linux_command.md
+      - Linux用户: system/linux_user_group.md
+      - Linux文件系统: system/linux_filesystem.md
+      - Window软件推荐: system/win_my_software.md
+      - Window服务注册: system/win_register_service.md
+      - 使用podman: system/win_podman_use.md
+      - 使用wsl: system/win_wsl_use.md
+      - Neo4j安装: system/install_neo4j.md
+      - mysql8安装: system/install_mysql8.md
+      - postgresql13安装: system/install_postgresql13.md
+      - elastic安装: system/install_elastic.md
+      - Java环境: system/env_java.md
+      - Python环境: system/env_python.md
+      - NodeJs环境: system/env_nodejs.md
+      - Docker启动顺序: system/docker_start_order.md
+  - Tool: tool_repo.md
+  - Githup: github_repo.md
+
+theme:
+  name: gitbook
+
+plugins: [ ]
