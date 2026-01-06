@@ -27,6 +27,14 @@ nav:
       - Python环境: system/env_python.md
       - NodeJs环境: system/env_nodejs.md
       - Docker启动顺序: system/docker_start_order.md
+  - 精句:
+      - 英文: significance/english.md
+      - 中文: significance/chinese.md
+  - 趣图:
+      - 你看到了什么? : qu_img/tizi.md
+      - 搜狗双拼输入法 : qu_img/sou_gou_shuang_pin.md
+      - 大脑功能Map : qu_img/brain_map.md
+      - 我的RK61键盘 : qu_img/rk61_keyboard.md
   - Tool: tool_repo.md
   - Githup: github_repo.md
 

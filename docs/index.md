@@ -2,11 +2,16 @@
 
 > 欢迎来到计算机的世界
 
-[Get Started](/shelf_comprehend)
+## slogan
+
+> --- 你所相信的“东西”，就是“你的世界”的基石...
 
 
-<!-- background -->
 <img src="_assets/background_1.jfif" alt="logo"/>
-<!-- css / js -->
-<script src="_assets/js/index.js"></script>
-<link href="_assets/css/smallzh.css" rel="stylesheet"/>
+
+## links
+1. docsify: [https://docsify.js.org](https://docsify.js.org/#/)
+2. marked.js: [https://marked.js.org/](https://marked.js.org/)
+3. typo.css: [http://typo.sofi.sh](http://typo.sofi.sh)
+4. markdown: [https://commonmark.org/](https://commonmark.org/)
+5. toml: [https://toml.io/en/](https://toml.io/en/) [github网址](https://github.com/toml-lang/toml)
