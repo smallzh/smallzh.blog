@@ -9,7 +9,7 @@
 css，全名是 Cascading Style Sheets，中文名叫 层叠样式表。用来控制**Html元素**在浏览器中的显示样式，比如：显示在浏览器的什么位置，大小是多少，颜色是什么样等等
 
 关键是理解 这个 **层叠(cascade)**，单词cascade，指一层叠一层的瀑布，比如：国内的 **德天跨国大瀑布**。样式(style)就像这种分层瀑布一样一层层的叠加覆盖
-![139f0cfdb2cb2f875c1dc48ca4c91090.png](:/6e17e64926f0437cac1c4cffd498547c)
+![139f0cfdb2cb2f875c1dc48ca4c91090.png](../_assets/img/concept/139f0cfdb2cb2f875c1dc48ca4c91090.png)
 
 ### 典型样例
 ```css
