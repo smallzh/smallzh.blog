@@ -13,6 +13,7 @@ nav:
   - 操作系统:
       - Linux系统: system/linux.md
       - Linux常用命令: system/linux_command.md
+      - Linux Shell: system/linux_shell.md
       - Linux用户: system/linux_user_group.md
       - Linux文件系统: system/linux_filesystem.md
       - Window软件推荐: system/win_my_software.md
