@@ -4,7 +4,7 @@
 1. 谷歌浏览器，设置 中文简体语言
 2. utools，网站：https://www.u-tools.cn/
 3. greenhub，网站：https://greenhubtx.com/
-4. Window的WindowTerminal，网站：https://github.com/microsoft/terminal
+4. WezTerm，网站：https://wezterm.org/
 5. nushell，网站：https://www.nushell.sh/
 6. joplin，网站：https://joplinapp.org/
 7. docker，网站：https://www.docker.com/products/docker-desktop/
