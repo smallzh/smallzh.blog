@@ -1,0 +1,43 @@
+site_name: smallzh.blog
+site_url: https://blog.smallzh.top/
+
+nav:
+  - 简介: index.md
+  - HelloWorld: concept/hello_world.md
+  - 基础概念:
+      - 编码: concept/encoding.md
+      - 进制: concept/radix.md
+      - 随机数: concept/random.md
+      - 时区: concept/geo_timezone.md
+      - 正则表达式: concept/regex.md
+      - 网络: concept/network.md
+      - Html5&CSS3: concept/h5_css3.md
+  - 其他:
+      - Docker使用: other/docker_start_order.md
+      - Podman使用: other/win_podman_use.md
+  - 精句:
+      - 英文: significance/english.md
+      - 中文: significance/chinese.md
+  - 趣图:
+      - 你看到了什么? : qu_img/tizi.md
+      - 搜狗双拼输入法 : qu_img/sou_gou_shuang_pin.md
+      - 大脑功能Map : qu_img/brain_map.md
+      - 我的RK61键盘 : qu_img/rk61_keyboard.md
+  - Tool: tool_repo.md
+  - Githup: github_repo.md
+
+theme:
+  name: smzhbook
+
+extra_css:
+  - assets/css/developer-light.css
+  - assets/css/immersive-reader.css
+
+extra_javascript:
+  - assets/js/immersive-reader.js
+
+extra:
+  site_description: smallzh 的个人博客 - 计算机知识笔记
+  site_author: smallzh
+
+plugins: [ ]

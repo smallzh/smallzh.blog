@@ -1,0 +1,381 @@
+/* =============================================
+   💻 开发者文档 · 浅色主题
+       Developer Docs Light Theme for smzhbook
+   风格: GitHub Docs (Primer light) + VitePress 结构
+   排版: 正文 16px / 行高 1.8 / 内容宽 800px
+   ============================================= */
+
+/* ========== CSS 变量覆盖（全站唯一浅色定义点） ========== */
+:root {
+  /* ---------------------- 背景 */
+  --vp-c-bg: #ffffff;        /* 页面主背景 */
+  --vp-c-bg-alt: #f6f8fa;    /* 侧边栏背景 */
+  --vp-c-bg-soft: #f6f8fa;   /* hover 面 / 表头 / 图表容器 */
+  --vp-c-bg-elv: #ffffff;    /* 下拉 / 浮动面板 */
+
+  /* ---------------------- 文字（GitHub fg 色阶） */
+  --vp-c-text-1: #1f2328;    /* 正文 / 标题 */
+  --vp-c-text-2: #59636e;    /* 次级文字 */
+  --vp-c-text-3: #6e7781;    /* 弱化文字 */
+
+  /* ---------------------- 品牌色 — 靛蓝 */
+  --vp-c-brand-1: #6366f1;   /* 常规态 */
+  --vp-c-brand-2: #4f46e5;   /* hover 态 */
+  --vp-c-brand-3: #4338ca;   /* 按下态 */
+  --vp-c-brand-soft: rgba(99, 102, 241, 0.10);  /* 选中 / 激活浅底 */
+
+  /* ---------------------- 边框 / 分割线（GitHub border） */
+  --vp-c-divider: #d1d9e0;
+  --vp-c-gutter: #d1d9e0;
+
+  /* ---------------------- 灰度 */
+  --vp-c-gray-1: #d1d9e0;    /* 滚动条 thumb */
+  --vp-c-gray-2: #d8dee4;    /* 次要边框 */
+  --vp-c-gray-3: #eaeef2;    /* 最淡边框 */
+  --vp-c-gray-soft: rgba(31, 35, 40, 0.06);  /* 内联代码底 */
+
+  /* ---------------------- 字体（中文优先） */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Hiragino Sans GB', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco',
+    'Source Code Pro', monospace;
+
+  /* ---------------------- 布局（保锚点偏移：--vp-nav-height 被 JS 读取，勿删） */
+  --vp-nav-height: 60px;
+  --vp-sidebar-width: 272px;
+  --vp-content-width: 800px;   /* 中文正文舒适宽度 */
+  --vp-aside-width: 256px;
+}
+
+/* ========== 全局基础 ========== */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 文字选中 */
+::selection {
+  background: rgba(99, 102, 241, 0.18);
+}
+
+/* ========== 顶部导航栏 — 毛玻璃 ========== */
+.vp-nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--vp-c-divider);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.vp-nav-bar-logo {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.vp-nav-bar-menu-link {
+  color: var(--vp-c-text-2);
+}
+
+.vp-nav-bar-menu-link:hover {
+  background-color: var(--vp-c-brand-soft);
+}
+
+.vp-nav-bar-dropdown {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* ========== 搜索框（预留：plugins 启用后生效） ========== */
+#book-search-input input:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+/* ========== 左侧侧边栏 ========== */
+.vp-sidebar {
+  background-color: var(--vp-c-bg-alt);
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.vp-sidebar-section-title,
+.vp-sidebar-group-title {
+  color: var(--vp-c-text-3);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* GitHub Docs 式：2px 品牌左边线标记激活项 */
+.vp-sidebar-link {
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
+.vp-sidebar-link:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg);
+}
+
+.vp-sidebar-item.active > .vp-sidebar-link {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+  border-left-color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.vp-sidebar-children .vp-sidebar-link {
+  color: var(--vp-c-text-2);
+  font-weight: 400;
+}
+
+.vp-sidebar-children .vp-sidebar-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+/* ========== 文档内容：排版舒适度 ========== */
+.vp-doc p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 16px 0;
+}
+
+/* ---- 标题节奏 ---- */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+  color: var(--vp-c-text-1);
+  scroll-margin-top: calc(var(--vp-nav-height) + 24px);
+}
+
+.vp-doc h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.vp-doc h2 {
+  font-size: 22px;
+  margin-top: 48px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  letter-spacing: -0.01em;
+}
+
+.vp-doc h3 {
+  font-size: 18px;
+  margin-top: 32px;
+}
+
+.vp-doc h4 {
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+/* ---- 链接：默认无下划线，hover 加下划线 ---- */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.vp-doc a code {
+  color: var(--vp-c-brand-1);
+}
+
+/* ---- 列表 ---- */
+.vp-doc li {
+  line-height: 1.7;
+}
+
+/* ========== 代码块 — GitHub Dark 深色高亮 ========== */
+/* 内联代码：浅灰 pill */
+.vp-doc code {
+  color: var(--vp-c-text-1);
+  background-color: rgba(129, 139, 152, 0.16);  /* GitHub 内联 code */
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.875em;
+}
+
+/* 代码块：深炭底 + 浅字（经典白底/深块对比） */
+.vp-doc pre {
+  margin: 24px 0;
+  padding: 0;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 1.65;
+}
+
+.vp-doc pre code {
+  display: block;
+  padding: 18px 24px;
+  background: none;
+  /* 显式硬编码前景色：防止 theme.css 的 color: var(--vp-c-text-1) 造成深底深字 */
+  color: #e6edf3;
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-x: auto;
+}
+
+.vp-doc pre code::selection {
+  background: rgba(56, 139, 253, 0.4);
+}
+
+/* 代码块行号（预留：启用 codehilite/highlight.js 后生效） */
+.vp-doc pre code .hljs-ln-numbers {
+  color: #8b949e;
+  padding-right: 12px;
+  user-select: none;
+}
+
+/* 预留 token 配色（GitHub Dark）：
+   .vp-doc pre .k  { color: #ff7b72; }
+   .vp-doc pre .s  { color: #a5d6ff; }
+   .vp-doc pre .m  { color: #79c0ff; }
+   .vp-doc pre .nf { color: #d2a8ff; }
+   .vp-doc pre .na { color: #ffa657; }
+   .vp-doc pre .c  { color: #8b949e; font-style: italic; }
+   .vp-doc pre .nt { color: #7ee787; }
+*/
+
+/* ========== 引用块 ========== */
+.vp-doc blockquote {
+  margin: 20px 0;
+  padding: 12px 20px;
+  border-left: 4px solid var(--vp-c-brand-1);
+  background-color: rgba(99, 102, 241, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.vp-doc blockquote p {
+  color: var(--vp-c-text-2);
+}
+
+/* ========== 表格 ========== */
+.vp-doc table {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.vp-doc th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: #fafbfc;
+}
+
+/* ========== 图片 ========== */
+.vp-doc img {
+  border-radius: 6px;
+  background: #f6f8fa;  /* 透明图占位底 */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== 高亮 / 标记 ========== */
+.vp-doc mark,
+.vp-doc .highlight {
+  background-color: #fff8c5;  /* GitHub mark */
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* ========== 分页导航 ========== */
+.vp-pagination-link {
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.vp-pagination-link:hover {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+}
+
+.vp-pagination-label {
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.04em;
+}
+
+/* ========== 右侧目录 ========== */
+.vp-doc-aside-outline {
+  border-left: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc-aside-outline-title {
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.06em;
+}
+
+.vp-outline-link {
+  color: var(--vp-c-text-2);
+}
+
+.vp-outline-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+.vp-outline-link.active {
+  color: var(--vp-c-brand-1);
+  border-left-color: var(--vp-c-brand-1);
+  font-weight: 500;
+}
+
+/* ========== Mermaid 图表 ========== */
+.mermaid {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+/* 系统暗色模式下固定浅色容器（图表自身是浅色 default 主题） */
+@media (prefers-color-scheme: dark) {
+  .mermaid {
+    background: var(--vp-c-bg-soft);
+  }
+}
+
+/* ========== 响应式补充 ========== */
+@media (max-width: 768px) {
+  .vp-doc h1 {
+    font-size: 26px;
+  }
+  .vp-doc h2 {
+    font-size: 20px;
+  }
+  .vp-doc h3 {
+    font-size: 16px;
+  }
+  /* 代码块紧凑 */
+  .vp-doc pre code {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  /* 宽表格横向滚动防溢出 */
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ========== 打印：保住深色代码块 ========== */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
