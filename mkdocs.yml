@@ -5,16 +5,16 @@ nav:
   - 简介: index.md
   - HelloWorld: concept/hello_world.md
   - 基础概念:
-      - 编码: concept/encoding.md
+      - 时间: concept/geo_timezone.md
       - 进制: concept/radix.md
+      - 编码: concept/encoding.md
       - 随机数: concept/random.md
-      - 时区: concept/geo_timezone.md
       - 正则表达式: concept/regex.md
       - 网络: concept/network.md
       - Html5&CSS3: concept/h5_css3.md
   - 其他:
       - Docker使用: other/docker_start_order.md
-      - Podman使用: other/win_podman_use.md
+      - Podman使用: other/use_podman.md
   - 精句:
       - 英文: significance/english.md
       - 中文: significance/chinese.md
@@ -31,10 +31,8 @@ theme:
 
 extra_css:
   - assets/css/developer-light.css
-  - assets/css/immersive-reader.css
 
-extra_javascript:
-  - assets/js/immersive-reader.js
+extra_javascript: [ ]
 
 extra:
   site_description: smallzh 的个人博客 - 计算机知识笔记

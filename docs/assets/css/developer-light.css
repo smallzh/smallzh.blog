@@ -42,9 +42,9 @@
 
   /* ---------------------- 布局（保锚点偏移：--vp-nav-height 被 JS 读取，勿删） */
   --vp-nav-height: 60px;
-  --vp-sidebar-width: 272px;
+  --vp-sidebar-width: 260px;
   --vp-content-width: 800px;   /* 中文正文舒适宽度 */
-  --vp-aside-width: 256px;
+  --vp-aside-width: 200px;
 }
 
 /* ========== 全局基础 ========== */
@@ -311,6 +311,11 @@ body {
 }
 
 /* ========== 右侧目录 ========== */
+/* 收窄目录与正文的间距，给中间正文留出更多宽度 */
+.vp-doc-aside {
+  padding-left: 24px;
+}
+
 .vp-doc-aside-outline {
   border-left: 1px solid var(--vp-c-divider);
 }
