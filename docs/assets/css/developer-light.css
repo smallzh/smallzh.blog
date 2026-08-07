@@ -384,3 +384,137 @@ body {
     print-color-adjust: exact;
   }
 }
+
+/* ========== Mermaid 点击放大弹窗 ========== */
+.mermaid {
+  position: relative;
+  cursor: zoom-in;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 弹窗打开期间隐藏原容器，避免留空框 */
+.mermaid.mz-hidden {
+  display: none;
+}
+
+/* hover 提示：图表渲染完成后（:has(svg)）才高亮 */
+.mermaid:has(svg):hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+/* 右上角放大镜徽标 */
+.mermaid::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E")
+    center / 16px no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.mermaid:has(svg):hover::after {
+  opacity: 1;
+}
+
+.mz-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999; /* 主题最高 z-index 为 100 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.mz-modal.mz-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mz-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+/* 弹窗面板固定浅色：图表是 mermaid default 浅色主题，暗色模式下保持一致 */
+.mz-modal-panel {
+  position: relative;
+  z-index: 1;
+  min-width: min(70vw, 960px);
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+}
+
+.mz-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.mz-modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.mz-stage {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 32px;
+  cursor: grab;
+  user-select: none;
+}
+.mz-stage.mz-dragging {
+  cursor: grabbing;
+}
+
+.mz-stage-inner {
+  min-width: 100%;
+}
+
+/* 覆盖 mermaid useMaxWidth 生成的内联 max-width，竖长图纵向滚动 */
+.mz-stage svg {
+  display: block;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+/* 缩放 >1 时放开宽度限制（JS 已显式设置 svg 宽度），滚动条随内容扩展 */
+.mz-stage.mz-scaled svg {
+  max-width: none !important;
+}
+
+/* 弹窗打开时锁背景滚动 */
+html.mz-lock {
+  overflow: hidden;
+}

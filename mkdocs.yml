@@ -38,7 +38,8 @@ theme:
 extra_css:
   - assets/css/developer-light.css
 
-extra_javascript: [ ]
+extra_javascript:
+  - assets/js/mermaid-zoom.js
 
 extra:
   site_description: smallzh 的个人博客 - 计算机知识笔记
