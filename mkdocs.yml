@@ -37,8 +37,11 @@ theme:
 
 extra_css:
   - assets/css/developer-light.css
+  - assets/css/developer-dark.css
 
 extra_javascript:
+  # 主题切换脚本需最先加载：同步执行，首屏渲染前应用主题避免闪烁
+  - assets/js/theme-toggle.js
   - assets/js/mermaid-zoom.js
 
 extra:
