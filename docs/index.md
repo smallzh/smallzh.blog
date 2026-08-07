@@ -1,10 +1,10 @@
-## smallzh's notes
+## smallzh's blog
 
 > 欢迎来到计算机的世界
 
 ## slogan
 
-> --- 你所相信的“东西”，就是“你的世界”的基石...
+> 你所相信的“东西”，就是构建“你的世界”的基石...
 
 
 <img src="_assets/background_1.jfif" alt="logo"/>

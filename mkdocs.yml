@@ -11,6 +11,8 @@ nav:
       - 随机数: concept/random.md
       - 正则表达式: concept/regex.md
       - 网络: concept/network.md
+      - 终端与Shell: concept/terminal.md
+      - 贝塞尔曲线: concept/bezier.md
       - Html5&CSS3: concept/h5_css3.md
   - 其他:
       - Docker使用: other/docker_start_order.md
