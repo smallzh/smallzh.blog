@@ -8,13 +8,17 @@ nav:
       - 时间: concept/geo_timezone.md
       - 进制: concept/radix.md
       - 编码: concept/encoding.md
-      - 随机数: concept/random.md
       - 正则表达式: concept/regex.md
-      - 网络: concept/network.md
-      - 终端与Shell: concept/terminal.md
+      - 随机数: concept/random.md
       - 贝塞尔曲线: concept/bezier.md
+  - 计算机:
+      - 硬件: concept/hardware.md
+      - 操作系统: concept/os.md
+      - 终端与Shell: concept/terminal.md
+      - 机械键盘和Vim : qu_img/rk61_keyboard.md
+      - 网络: concept/network.md
       - Html5&CSS3: concept/h5_css3.md
-  - 其他:
+      - 后端服务: concept/software_server.md
       - Docker使用: other/docker_start_order.md
       - Podman使用: other/use_podman.md
   - 精句:
@@ -24,9 +28,9 @@ nav:
       - 你看到了什么? : qu_img/tizi.md
       - 搜狗双拼输入法 : qu_img/sou_gou_shuang_pin.md
       - 大脑功能Map : qu_img/brain_map.md
-      - 我的RK61键盘 : qu_img/rk61_keyboard.md
-  - Tool: tool_repo.md
-  - Githup: github_repo.md
+  - 其他:
+      - Tool: tool_repo.md
+      - Githup: github_repo.md
 
 theme:
   name: smzhbook
